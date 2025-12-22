@@ -36,21 +36,6 @@
         };
     };
 
-    rgb_encoder: rgb_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        label = "RGB_ENCODER";
-        #sensor-binding-cells = <0>;
-        bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
-    };
-
-    scroll_encoder: scroll_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-        tap-ms = <30>;
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -85,14 +70,14 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp C_VOLUME_UP    &kp N1           &kp N2             &kp N3           &kp N4           &kp N5             &kp NUMBER_6     &kp N7           &kp N8          &kp NUMBER_9     &kp N0    &kp BSPC
-&rgb_ug RGB_TOG    &rgb_ug RGB_BRD  &rgb_ug RGB_BRI    &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_EFR    &kp LEFT         &kp DOWN         &kp UP_ARROW    &kp RIGHT_ARROW  &kp HOME  &kp PG_UP
-&kp C_VOLUME_DOWN  &kp K_MUTE       &kp C_VOLUME_DOWN  &rgb_ug RGB_TOG  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI    &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &mmv MOVE_LEFT  &rgb_ug RGB_EFR  &kp END   &kp PG_DN
-                                                       &rgb_ug RGB_BRD  &kp END          &kp PG_DN          &kp C_MUTE       &trans           &trans
+&kp C_VOLUME_UP    &kp N1           &kp N2           &kp N3           &kp N4           &kp N5             &kp NUMBER_6     &kp N7           &kp N8          &kp NUMBER_9     &kp N0    &kp BSPC
+&td0               &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_EFR    &kp LEFT         &kp DOWN         &kp UP_ARROW    &kp RIGHT_ARROW  &kp HOME  &kp PG_UP
+&kp C_VOLUME_DOWN  &kp K_MUTE       &kp C_VOLUME_UP  &rgb_ug RGB_TOG  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI    &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &mmv MOVE_LEFT  &rgb_ug RGB_EFR  &kp END   &kp PG_DN
+                                                     &rgb_ug RGB_BRD  &kp END          &kp PG_DN          &studio_unlock   &trans           &trans
             >;
 
             label = "NUMBER";
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&none>;
         };
 
         raise_layer {
@@ -112,7 +97,7 @@
             >;
 
             label = "SYMBOL";
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&none>;
         };
 
         layer_3 {
@@ -125,7 +110,7 @@
             >;
 
             label = "FN";
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&none>;
         };
     };
 };
