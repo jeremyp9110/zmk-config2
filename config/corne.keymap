@@ -62,11 +62,12 @@
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&kp C_VOL_UP  &kp N1           &kp N2           &kp N3           &kp N4           &kp N5             &kp N6           &kp N7           &kp N8          &kp N9           &kp N0    &kp BSPC
-&td0          &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_EFR    &kp LEFT         &kp DOWN         &kp UP          &kp RIGHT        &kp HOME  &kp PG_UP
+&kp C_VOL_UP  &kp N1           &kp N2           &kp N3           &kp N4           &kp N5             &kp N6           &kp N7           &kp N8                 &kp N9           &kp N0    &kp BSPC
+&td0          &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_EFR    &kp LEFT         &kp DOWN         &kp UP                 &kp RIGHT        &kp HOME  &kp PG_UP
 &kp C_VOL_DN  &kp K_MUTE       &kp C_VOL_UP     &rgb_ug RGB_TOG  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI    &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &mmv_custom MOVE_LEFT  &rgb_ug RGB_EFR  &kp END   &kp PG_DN
                                                 &rgb_ug RGB_BRD  &kp END          &kp PG_DN          &trans           &trans           &trans
             >;
+
             // CORRECTION ICI : Suppression du &none problématique
         };
 
@@ -78,22 +79,22 @@
 &kp BSLH  &kp GRAVE  &trans  &out OUT_USB  &out OUT_BLE  &kp AT       &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE  &kp LBRC
                              &kp RBRC      &kp PIPE      &kp TILDE    &trans     &trans     &trans
             >;
+
             // CORRECTION ICI
         };
 
         layer_3 {
             display-name = "Fn";
             bindings = <
-&kp F1      &kp F2      &kp F3      &kp F4        &kp F5        &kp F6             &kp F7      &kp F8          &kp F9          &kp F10         &kp F11    &kp F12
-&bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2       &trans      &mmv_custom MOVE_DOWN  &kp C_BRI_DN    &kp C_BRI_UP    &mkp MCLK  &mkp RCLK
-&kp PSCRN   &kp F12     &trans      &sys_reset    &sys_reset    &bootloader        &trans      &mkp MB5        &mmv_custom MOVE_LEFT  &bt BT_CLR_ALL  &trans     &bootloader
-                                    &sys_reset    &kp SLCK      &kp PAUSE_BREAK    &kp C_MUTE  &trans          &trans
+&kp F1      &kp F2      &kp F3      &kp F4        &kp F5        &kp F6             &kp F7          &kp F8                 &kp F9                 &kp F10         &kp F11    &kp F12
+&bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2       &trans          &mmv_custom MOVE_DOWN  &kp C_BRI_DN           &kp C_BRI_UP    &mkp MCLK  &mkp RCLK
+&kp PSCRN   &kp F12     &trans      &sys_reset    &sys_reset    &bootloader        &studio_unlock  &mkp MB5               &mmv_custom MOVE_LEFT  &bt BT_CLR_ALL  &trans     &bootloader
+                                    &sys_reset    &kp SLCK      &kp PAUSE_BREAK    &kp C_MUTE      &trans                 &trans
             >;
+
             // CORRECTION ICI
         };
     };
 };
 
-&led_strip { 
-    chain-length = <27>; 
-};
+&led_strip { chain-length = <27>; };
